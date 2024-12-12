@@ -8,10 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         userListAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, mutableListOf())
         lvUsers.adapter = userListAdapter
         setSupportActionBar(findViewById(R.id.toolbar))
+        supportActionBar?.title = getString(R.string.toolbar_name)
         btnSave.setOnClickListener { saveUser() }
         lvUsers.setOnItemClickListener { _, _, position, _ -> deleteUser(position) }
     }
